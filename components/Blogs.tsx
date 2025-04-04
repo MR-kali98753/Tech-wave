@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Image from 'next/image';
 
 const Blogs = () => {
   const [data, setData] = useState<any[]>([]);
@@ -43,7 +44,7 @@ const Blogs = () => {
               <div key={index} className="cursor-pointer w-full border border-[#2f3241]">
                 <div className="h-[240px] w-full overflow-hidden">
                   {imageUrl ? (
-                    <img
+                    <Image
                       src={imageUrl}
                       alt="Blog Image"
                       className="w-full h-full object-cover hover:scale-110 transition-all duration-300 ease-in-out"
@@ -62,7 +63,7 @@ const Blogs = () => {
                   <div className="flex items-center gap-[25px] pt-[10px] text-[#97989F]">
                     <div className="flex items-center gap-[10px]">
                         <div>
-                            <img className="w-12 h-12 rounded-full object-cover" src={`http://localhost:1337${item?.avatar.url}`} alt="" />
+                            <Image className="w-12 h-12 rounded-full object-cover" src={`http://localhost:1337${item?.avatar.url}`} alt="" />
                         </div>
                         <p>{item?.author}</p>
                     </div>
